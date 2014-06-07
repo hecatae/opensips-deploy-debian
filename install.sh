@@ -87,3 +87,6 @@ wget -O $OSIPCFG https://github.com/staskobzar/opensips-deploy-debian/raw/master
 chown opensips. $OSIPCFG
 
 sed -i "s,:MYSQLPWD@,:$DBPASS@," $OSIPCFG
+
+/etc/enit.d/opensips start
+opensipsctl fifo ps
