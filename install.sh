@@ -69,6 +69,14 @@ password=$DBROOTPW
 host=localhost
 x123
 
+cat <<x23ssh > ~/.ssh/config
+Host github.com
+  HostName github.com
+  Port 22
+  StrictHostKeyChecking no
+  
+x23ssh
+
 # setup vim
 \curl -s https://raw.githubusercontent.com/staskobzar/myvimbasic/master/install.sh | bash
 
