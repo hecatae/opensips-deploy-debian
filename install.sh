@@ -80,4 +80,10 @@ x23ssh
 # setup vim
 \curl -s https://raw.githubusercontent.com/staskobzar/myvimbasic/master/install.sh | bash
 
+# OpenSIPS main config file
+OSIPCFG=/etc/opensips/opensips.cfg
+rm -f $OSIPCFG
+wget -O $OSIPCFG https://github.com/staskobzar/opensips-deploy-debian/raw/master/opensips.cfg
+chown opensips. $OSIPCFG
 
+sed -i "s,:MYSQLPWD@,:$DBPASS@," $OSIPCFG
