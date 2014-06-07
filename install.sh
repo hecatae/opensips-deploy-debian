@@ -46,6 +46,7 @@ sed -i "s|^# \(DBRWPW=\).*$|\1$DBPASS|" $CONF
 sed -i 's|^# \(DBROOTUSER="root"\)$|\1|' $CONF
 mysql -e "grant all on opensips.* to opensips@localhost identified by '$DBPASS'"
 mysql -e "flush privileges"
+export PW=$DBROOTPW
 yes | opensipsdbctl create opensips
 
 # Log rotate and syslog
