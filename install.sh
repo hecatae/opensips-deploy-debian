@@ -88,5 +88,5 @@ chown opensips. $OSIPCFG
 
 sed -i "s,:MYSQLPWD@,:$DBPASS@," $OSIPCFG
 
-/etc/enit.d/opensips start
+/etc/init.d/opensips start
 opensipsctl fifo ps
