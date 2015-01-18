@@ -1,4 +1,4 @@
-#!/usr/bin/env ssh
+#!/usr/bin/env bash
 
 aptitude -y install apache2 php5 php5-cli php5-gd php5-mysql php5-xmlrpc php-pear
 pear install MDB2 MDB2#mysql log
