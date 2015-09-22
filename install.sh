@@ -8,6 +8,11 @@ DBROOTPW=$(pwgen -N1 12 -n)
 echo "mysql-server-5.5 mysql-server/root_password password $DBROOTPW" | debconf-set-selections
 echo "mysql-server-5.5 mysql-server/root_password_again password $DBROOTPW" | debconf-set-selections
 
+echo "[mysql]" >> ~/.my.cnf
+echo "user=root" >> ~/.my.cnf
+echo "password=$DBROOTPW" >> ~/.my.cnf
+echo "host=localhost" >> ~/.my.cnf
+
 aptitude -yq=2 install gcc bison flex make openssl libmysqlclient15-dev perl libdbi-perl libdbd-mysql-perl libdbd-pg-perl libfrontier-rpc-perl libterm-readline-gnu-perl libberkeleydb-perl mysql-server ssh libxml2 libxml2-dev libxmlrpc-c-dev libpcre3 libpcre3-dev subversion libncurses-dev git ngrep build-essential curl
 
 # OpenSIPS build
