@@ -67,14 +67,6 @@ x23
 echo "local5.*  -/var/log/opensips/opensips.log" >> /etc/rsyslog.conf
 /etc/init.d/rsyslog restart
 
-# mysql 
-cat <<x123 > ~/.my.cnf
-[mysql]
-user=root
-password=$DBROOTPW
-host=localhost
-x123
-
 cat <<x23ssh > ~/.ssh/config
 Host github.com
   HostName github.com
