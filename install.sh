@@ -12,8 +12,8 @@ aptitude -yq=2 install gcc bison flex make openssl libmysqlclient15-dev perl lib
 
 # OpenSIPS build
 cd /usr/src
-git clone https://github.com/OpenSIPS/opensips.git -b 1.10 opensips_1_10
-cd /usr/src/opensips_1_10/
+git clone https://github.com/OpenSIPS/opensips.git -b 1.11 opensips_1_11
+cd /usr/src/opensips_1_11/
 MODULES="db_mysql dialplan presence presence_dialoginfo presence_mwi presence_xml pua pua_bla pua_dialoginfo pua_mi pua_usrloc pua_xmpp xcap b2b_logic"
 sed -i "s,^\(include_modules?\s*=\).*,\1$MODULES," Makefile.conf
 sed -i "s,^\(PREFIX\s*=\).*$,\1/," Makefile.conf
@@ -21,7 +21,7 @@ make all
 make install
 
 # OpenSIPS env
-cd /usr/src/opensips_1_10/packaging/debian
+cd /usr/src/opensips_1_11/packaging/debian
 cp opensips.default /etc/default/opensips
 cp opensips.init /etc/init.d/opensips
 chmod +x /etc/init.d/opensips
