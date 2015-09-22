@@ -33,7 +33,7 @@ update-rc.d opensips defaults 99
 chown -R opensips. /var/run/opensips/ /var/log/opensips/ /etc/opensips/
 sed -i 's/\(RUN_OPENSIPS\s*=\s*\)no/\1yes/' /etc/default/opensips
 sed -i "s|^\(DAEMON\).*$|\1=$(which opensips)|" /etc/init.d/opensips
-sed -i 's/^\(S_MEMORY\).*/\1=128/' /etc/default/opensips
+sed -i 's/^\(S_MEMORY\).*/\1=256/' /etc/default/opensips
 
 CONF=/etc/opensips/opensipsctlrc
 DBPASS=$(pwgen -N1 12)
