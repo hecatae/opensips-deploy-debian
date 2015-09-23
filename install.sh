@@ -24,6 +24,7 @@ MODULES="db_mysql dialplan presence presence_dialoginfo presence_mwi presence_xm
 sed -i "s,^\(include_modules?\s*=\).*,\1$MODULES," Makefile.conf
 sed -i "s,^\(PREFIX\s*=\).*$,\1/," Makefile.conf
 sed -i "s/^#\(DEFS+= -DUSE_TLS\)/\1/" Makefile.conf
+sed "/DEFS+= -DUSE_TLS/a TLS=1" Makefile.conf
 make all
 make install
 
