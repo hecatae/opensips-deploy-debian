@@ -67,6 +67,8 @@ x23
 echo "local5.*  -/var/log/opensips/opensips.log" >> /etc/rsyslog.conf
 /etc/init.d/rsyslog restart
 
+[ -d ~/.ssh ] || mkdir ~/.ssh
+
 cat <<x23ssh > ~/.ssh/config
 Host github.com
   HostName github.com
